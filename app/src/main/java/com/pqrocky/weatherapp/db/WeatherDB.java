@@ -48,7 +48,7 @@ public class WeatherDB {
     }
 
     public  List<Province> loadProvinces(){
-        List<Province> list = new ArrayList<Province>();
+        List<Province> list = new ArrayList<>();
         Cursor cursor = db.query("Province",null,null,null,null,null,null);
         if(cursor.moveToFirst()){
             do{
@@ -62,6 +62,7 @@ public class WeatherDB {
                 list.add(province);
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 
@@ -76,7 +77,7 @@ public class WeatherDB {
     }
 
     public  List<City> loadCities(int provinceId){
-        List<City> list = new ArrayList<City>();
+        List<City> list = new ArrayList<>();
         Cursor cursor = db.query("City",null,"province_id=?",new String[]{String.valueOf(provinceId)},null,null,null);
         if(cursor.moveToFirst()){
             do{
@@ -90,6 +91,7 @@ public class WeatherDB {
                 list.add(city);
             }while(cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 
@@ -111,7 +113,7 @@ public class WeatherDB {
      * 从数据库读取某城市下所有的县信息。
      */
     public  List<County> loadCounties(int cityId) {
-        List<County> list = new ArrayList<County>();
+        List<County> list = new ArrayList<>();
         Cursor cursor = db.query("County", null, "city_id = ?",
                 new String[] { String.valueOf(cityId) }, null, null, null);
         if (cursor.moveToFirst()) {
@@ -126,6 +128,7 @@ public class WeatherDB {
                 list.add(county);
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return list;
     }
 

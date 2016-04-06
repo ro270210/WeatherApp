@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by 从鹏 on 2016-03-31.
- * Weatherapp db open helper
+ * db openheler
  */
 public class WeatherAppOpenHelper extends SQLiteOpenHelper {
 

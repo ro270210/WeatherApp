@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Weather App</string>
+    <string name="area_default_title">China</string>
+    <string name="lowToHighDegreeSplit">~</string>
 </resources>
